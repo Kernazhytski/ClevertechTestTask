@@ -14,18 +14,25 @@ public class ItemsDAO {
     @Autowired
     private ItemsRepo itemsRepo;
 
+    private Long actionItemsTotal = 0l;
+
     private HashMap<Items, Integer> list = new HashMap<Items, Integer>();
 
     public void addItem(Long id, Integer num) {
         Items items = itemsRepo.findAll().stream().filter(item -> id == item.getId()).findFirst().orElse(null);
-        if(items==null){
-            System.out.println("Item with id "+id+" doesn't exist");
-        }
-        else if (list.containsKey(items)) {
+        if (items == null) {
+            System.out.println("Item with id " + id + " doesn't exist");
+            return;
+        } else if (list.containsKey(items)) {
             list.put(items, list.get(items) + num);
         } else if (items != null) {
             list.put(items, num);
         }
+        actionItemsTotal += num.longValue();
+    }
+
+    public Long getActionItemsTotal() {
+        return actionItemsTotal;
     }
 
     public HashMap<Items, Integer> getList() {
@@ -34,6 +41,11 @@ public class ItemsDAO {
 
     public void addItem(Long id) {
         addItem(id, 1);
+    }
+
+    public void clearItems() {
+        list.clear();
+        actionItemsTotal = 0l;
     }
 
 

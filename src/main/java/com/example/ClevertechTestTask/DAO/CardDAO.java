@@ -16,6 +16,11 @@ public class CardDAO {
     private CardRepo cardRepo;
 
     private float percents = 0;
+    private boolean exist=false;
+
+    public boolean isExist() {
+        return exist;
+    }
 
     public float getPercents() {
         return percents;
@@ -25,12 +30,19 @@ public class CardDAO {
         if (percents == 0) {
             Card card = cardRepo.findAll().stream().filter(item -> cardNumber.equals(item.getCardNumber())).findFirst().orElse(null);
             if (card!=null){
-                this.percents = card.getPercents();}
+                this.percents = card.getPercents();
+                exist=true;
+            }
             else{
                 System.out.println("Can't find card with number "+cardNumber);
             }
         }else{
             System.out.println("You can't use more than 1 card");
         }
+    }
+
+    public void deleteCard(){
+        percents=0;
+        exist=false;
     }
 }

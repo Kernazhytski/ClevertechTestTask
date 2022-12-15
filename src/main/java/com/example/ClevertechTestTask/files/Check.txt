@@ -3,11 +3,9 @@
 *             Super market Clevertec             *
 **************************************************
 * QTY *    Description     *  Cost   *   Total   *
-*  1  *      Beer(a)       *  $1.35  *   $1.35   *
 *  1  *     Potato(a)      *  $1.5   *   $1.5    *
 *  5  *     Tomato(a)      *  $3.11  *  $15.55   *
 **************************************************
 *    Action products received a 10% discount     *
-*         Card with 30.0% discount used          *
-* TOTAL                                   $12.88 *
+* TOTAL                                   $17.05 *
 **************************************************

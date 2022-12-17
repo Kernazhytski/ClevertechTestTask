@@ -41,6 +41,8 @@ public class CheckController {
                          @RequestParam(value = "quantity", required = false) List<Integer> quantityList,
                          @RequestParam(value = "card", required = false) List<Long> cards,
                          HttpServletResponse response) {
+        itemsDAO.clearItems();
+        cardDAO.deleteCard();
         try {
             if (idList.size() == quantityList.size()) {
                 for (int i = 0; i < idList.size(); i++) {
@@ -73,7 +75,8 @@ public class CheckController {
             } else {
                 System.out.println("The number of id must equal the number of quantities");
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e){}
+        catch (Exception e) {
             System.out.println("No items has been added");
         }
     }

@@ -28,9 +28,6 @@ class TestMainRequests {
 	@Autowired
 	private Request request;
 
-	@Autowired
-	private ItemsRepo itemsRepo;
-
 	private HashMap<Items, Integer> list = new HashMap<Items, Integer>();
 
 	private List<Items> listItems;

@@ -11,11 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 
 
 @SpringBootTest()
@@ -46,16 +42,55 @@ public class TestGetRequests {
 
     @Test
     void Test1() {
-
-        controller.getCheck(new ArrayList<Long>() {
-        }, new ArrayList<Integer>() {
-        }, new ArrayList<Long>() {
-        }, null);
+        controller.getCheck(Arrays.asList(1l,5l),
+                Arrays.asList(2,10),
+                Arrays.asList(1234l,12345l),
+                null);
 
         list.put(listItems.stream().filter(item -> 1l == item.getId()).findFirst().orElse(null),2);
         list.put(listItems.stream().filter(item -> 5l == item.getId()).findFirst().orElse(null),10);
 
-        System.out.println(itemsDAO.getList());
+        for(Map.Entry<Items,Integer> entry : list.entrySet()) {
+            Assertions.assertEquals(entry.getValue(), itemsDAO.getList().get(entry.getKey()));
+        }
+
+        Assertions.assertEquals(30f,cardDAO.getPercents());
+
+        itemsDAO.clearItems();
+        cardDAO.deleteCard();
+    }
+
+    @Test
+    void Test2() {
+        controller.getCheck(Arrays.asList(1l,5l,2l,14l),
+                Arrays.asList(2,10,1,13),
+                Arrays.asList(7777l),
+                null);
+
+        list.put(listItems.stream().filter(item -> 1l == item.getId()).findFirst().orElse(null),2);
+        list.put(listItems.stream().filter(item -> 5l == item.getId()).findFirst().orElse(null),10);
+        list.put(listItems.stream().filter(item -> 2l == item.getId()).findFirst().orElse(null),1);
+
+        for(Map.Entry<Items,Integer> entry : list.entrySet()) {
+            Assertions.assertEquals(entry.getValue(), itemsDAO.getList().get(entry.getKey()));
+        }
+        Assertions.assertTrue(itemsDAO.getList().size()==3);
+
+        Assertions.assertEquals(50f,cardDAO.getPercents());
+
+        itemsDAO.clearItems();
+        cardDAO.deleteCard();
+    }
+
+    @Test
+    void Test3() {
+        controller.getCheck(Arrays.asList(1l,5l),
+                Arrays.asList(2,10),
+                Arrays.asList(12345l),
+                null);
+
+        list.put(listItems.stream().filter(item -> 1l == item.getId()).findFirst().orElse(null),2);
+        list.put(listItems.stream().filter(item -> 5l == item.getId()).findFirst().orElse(null),10);
 
         for(Map.Entry<Items,Integer> entry : list.entrySet()) {
             Assertions.assertEquals(entry.getValue(), itemsDAO.getList().get(entry.getKey()));

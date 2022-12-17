@@ -63,13 +63,10 @@ public class Check {
         }
 
 
-        clearData();
+
     }
 
-    private void clearData() {
-        itemsDAO.clearItems();
-        cardDAO.deleteCard();
-    }
+
 
     private float priseCount(Items item) {
         if (itemsDAO.getActionItemsTotal() > 5 && item.isAction()) {

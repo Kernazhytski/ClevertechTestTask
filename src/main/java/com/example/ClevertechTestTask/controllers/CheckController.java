@@ -62,13 +62,11 @@ public class CheckController {
                     response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
 
 
-
                     response.setContentLength((int) file.length());
 
                     InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
 
                     FileCopyUtils.copy(inputStream, response.getOutputStream());
-
                 } else {
                     System.out.print("File doesn't exist");
                 }

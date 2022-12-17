@@ -3,9 +3,9 @@
 *             Super market Clevertec             *
 **************************************************
 * QTY *    Description     *  Cost   *   Total   *
-*  1  *     Potato(a)      *  $1.5   *   $1.5    *
-*  5  *     Tomato(a)      *  $3.11  *  $15.55   *
+*  1  *    Cucumber(a)     *  $3.0   *   $3.0    *
+*  2  *     Tomato(a)      *  $2.0   *   $4.0    *
 **************************************************
-*    Action products received a 10% discount     *
-* TOTAL                                   $17.05 *
+*          Card with 6.0% discount used          *
+* TOTAL                                    $6.58 *
 **************************************************

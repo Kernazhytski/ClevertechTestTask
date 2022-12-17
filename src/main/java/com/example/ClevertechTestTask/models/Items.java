@@ -42,6 +42,16 @@ public class Items {
         this.cost = cost;
     }
 
+    public Items() {
+    }
+
+    public Items(Long id, String name, float cost, boolean action) {
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.action = action;
+    }
+
     public boolean isAction() {
         return action;
     }

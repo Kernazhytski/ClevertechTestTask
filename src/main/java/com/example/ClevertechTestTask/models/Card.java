@@ -14,12 +14,20 @@ public class Card {
         return cardNumber;
     }
 
+    public Card() {
+    }
+
     public void setCardNumber(Long cardNumber) {
         this.cardNumber = cardNumber;
     }
 
     public float getPercents() {
         return percents;
+    }
+
+    public Card(Long cardNumber, float percents) {
+        this.cardNumber = cardNumber;
+        this.percents = percents;
     }
 
     public void setPercents(float percents) {

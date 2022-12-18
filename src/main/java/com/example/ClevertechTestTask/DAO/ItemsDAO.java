@@ -44,7 +44,8 @@ public class ItemsDAO {
         } else if (items != null) {
             list.put(items, num);
         }
-        actionItemsTotal += num.longValue();
+        if(items.isAction()){
+        actionItemsTotal += num.longValue();}
     }
 
     public Long getActionItemsTotal() {

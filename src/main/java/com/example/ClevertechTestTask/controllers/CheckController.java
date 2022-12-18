@@ -3,7 +3,6 @@ package com.example.ClevertechTestTask.controllers;
 import com.example.ClevertechTestTask.DAO.CardDAO;
 import com.example.ClevertechTestTask.DAO.ItemsDAO;
 import com.example.ClevertechTestTask.check.Check;
-import com.example.ClevertechTestTask.requestBody.RequestItem;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;

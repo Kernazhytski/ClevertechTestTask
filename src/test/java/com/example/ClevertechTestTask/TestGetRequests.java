@@ -76,7 +76,7 @@ public class TestGetRequests {
         }
         Assertions.assertTrue(itemsDAO.getList().size()==3);
 
-        Assertions.assertEquals(50f,cardDAO.getPercents());
+        Assertions.assertEquals(77.7f,cardDAO.getPercents());
 
         itemsDAO.clearItems();
         cardDAO.deleteCard();

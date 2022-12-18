@@ -71,7 +71,7 @@ class TestMainRequests {
 			Assertions.assertEquals(entry.getValue(), list.get(entry.getKey()));
 		}
 		request.getRequest("card-7777");
-		Assertions.assertEquals(50f,cardDAO.getPercents());
+		Assertions.assertEquals(77.7f,cardDAO.getPercents());
 		request.getRequest("card-6666");
 		Assertions.assertNotEquals(6f,cardDAO.getPercents());
 
@@ -95,7 +95,7 @@ class TestMainRequests {
 			Assertions.assertEquals(entry.getValue(), itemsDAO.getList().get(entry.getKey()));
 		}
 		request.getRequest("card-7777");
-		Assertions.assertEquals(50f,cardDAO.getPercents());
+		Assertions.assertEquals(77.7f,cardDAO.getPercents());
 		request.getRequest("card6666");
 		Assertions.assertNotEquals(0,cardDAO.getPercents());
 
@@ -118,7 +118,7 @@ class TestMainRequests {
 			Assertions.assertEquals(entry.getValue(), itemsDAO.getList().get(entry.getKey()));
 		}
 		request.getRequest("card-7777");
-		Assertions.assertEquals(50f,cardDAO.getPercents());
+		Assertions.assertEquals(77.7f,cardDAO.getPercents());
 		request.getRequest("card6666");
 		Assertions.assertNotEquals(0,cardDAO.getPercents());
 
